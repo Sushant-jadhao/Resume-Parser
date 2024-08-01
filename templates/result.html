@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsed Resume</title>
+</head>
+
+<body>
+    <h1>Parsed Resume</h1>
+    <h2>Personal Details</h2>
+    <p><strong>Name:</strong> {{ resume.personal_details.name }}</p>
+    <p><strong>Email:</strong> {{ resume.personal_details.contact.email }}</p>
+    <p><strong>Phone:</strong> {{ resume.personal_details.contact.phone }}</p>
+
+    <h2>Education</h2>
+    <ul>
+        {% for edu in resume.education %}
+        <li>{{ edu }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Projects</h2>
+    <ul>
+        {% for proj in resume.projects %}
+        <li>{{ proj }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in resume.skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Publications</h2>
+    <ul>
+        {% for pub in resume.publications %}
+        <li>{{ pub }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Extracurriculars</h2>
+    <ul>
+        {% for ext in resume.extracurriculars %}
+        <li>{{ ext }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Upload Another Resume</a>
+</body>
+
+</html>
